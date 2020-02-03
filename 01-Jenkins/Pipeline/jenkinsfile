@@ -4,7 +4,7 @@ node {
 
      
   stage('Git-Checkout') {
-   git 'https://github.com/Aaditigupta/MyProject3.git'
+   git 'https://github.com/Aaditigupta/UserProject.git'
   }
     
  def project_path="01-Jenkins/Code/userproject"
