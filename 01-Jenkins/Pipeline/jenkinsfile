@@ -38,7 +38,7 @@ stage('Jfrog Artifacory Upload') {
         def server= Artifactory.server 'Artifactory'
                     def uploadSpec= """{
                         "files": [{
-                        "pattern": "/root/.jenkins/workspace/01-Jenkins/Code/userproject/target/*.war",
+                        "pattern": "/target/*.war",
                         "target": "userproject"}]
                     }"""
         server.upload(uploadSpec)
