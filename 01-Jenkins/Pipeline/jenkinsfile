@@ -38,7 +38,7 @@ stage('Jfrog Artifacory Upload') {
         def server= Artifactory.server 'Artifactory'
                     def uploadSpec= """{
                         "files": [{
-                        "pattern": "/target/*.war",
+                        "pattern": "target/*.war",
                         "target": "userproject"}]
                     }"""
         server.upload(uploadSpec)
