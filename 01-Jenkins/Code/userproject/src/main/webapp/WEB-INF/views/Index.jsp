@@ -19,18 +19,18 @@ body{
 </head>
 <body>
 <div class="container">
-<h2> Enter the User Details </h2>
+<h2><font color="white"> Enter the User Details </font></h2>
   <form action="AdminPage" method="post">
     <div class="form-group">
-      <label for="UserId">User ID :</label>
+        <label for="UserId"><font color="white">User ID :</font></label>
       <input type="text" class="form-control" id="senduserid" placeholder="Enter User ID" name="senduserid">
     </div>
     <div class="form-group">
-      <label for="pwd">Password :</label>
+        <label for="pwd"><font color="white">Password :</font></label>
       <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
+      <label><input type="checkbox" name="remember"><font color="white"> Remember me</font></label>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
