@@ -31,7 +31,7 @@
     copy: src=templates/sample.war dest=/opt/SP/apps/tomcat/webapps/ mode=0644
 
   - name: Copy UserProject War Files
-    copy: src=templates/userproject-0.0.1-SNAPSHOT.war.original dest=/opt/SP/apps/tomcat/webapps/ mode=0644
+    copy: src=templates/userproject.war dest=/opt/SP/apps/tomcat/webapps/ mode=0644
 
   handlers:
   - name: Restart Tomcat
