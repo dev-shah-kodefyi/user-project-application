@@ -51,6 +51,10 @@ stage('Jfrog Artifacory Upload') {
    stage('Docker-Stage-Deployment') {
    sh label: '', script: 'docker-compose up -d --build'
   }
+  
+  stage('Approval for deployment into Production') {
+  	input "Do you want to deploy it into Production server?"
+  }
  
   stage('Geting Ready For Ansible') {
   sh label: 'Docker', script: 'cp -rf target/*.war ../../../04-Terraform/03-Ansible-Deploy/ansible/04-Tomcat/templates/'
