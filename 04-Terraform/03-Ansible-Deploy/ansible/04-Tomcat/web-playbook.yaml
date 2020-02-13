@@ -29,7 +29,7 @@
     command: rm -rf /opt/SP/apps/tomcat/webapps/ROOT
     
     - name: Copy user_project Project War Files
-    copy: src=templates/userproject-0.0.1-SNAPSHOT.war dest=/opt/SP/apps/tomcat/webapps/ROOT.war mode=0644
+    copy: src=templates/userproject-0.0.1-SNAPSHOT dest=/opt/SP/apps/tomcat/webapps/ROOT.war mode=0644
 
 
   handlers:
