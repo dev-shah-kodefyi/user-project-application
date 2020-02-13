@@ -18,7 +18,7 @@
 
 
   - name: Download Tomcat
-    get_url: url=http://apachemirror.wuchna.com/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz dest=/opt/SP/apps/tomcat.tar.gz mode=0755 
+    get_url: url=http://apachemirror.wuchna.com/tomcat/tomcat-9/v9.0.31/bin/apache-tomcat-9.0.31.tar.gz dest=/opt/SP/apps/tomcat.tar.gz mode=0755 
 
   - name: Extract Tomcat
     command: "tar zxf /opt/SP/apps/tomcat.tar.gz  -C /opt/SP/apps/tomcat --strip-components 1"
