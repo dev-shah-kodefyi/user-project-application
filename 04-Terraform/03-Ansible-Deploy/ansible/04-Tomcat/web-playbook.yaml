@@ -16,21 +16,23 @@
   - name: Install Java 1.8 
     apt: name=default-jdk state=present
 
+
   - name: Download Tomcat
     get_url: url=http://apachemirror.wuchna.com/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz dest=/opt/SP/apps/tomcat.tar.gz mode=0755 
 
   - name: Extract Tomcat
     command: "tar zxf /opt/SP/apps/tomcat.tar.gz  -C /opt/SP/apps/tomcat --strip-components 1"
 
-    notify:
+  - name: Copy Index Page Files
+    copy: src=templates/apps dest=/opt/SP/apps/tomcat/webapps/ mode=0644
+    notify: 
     - Restart Tomcat
     
   - name: Remove ROOT folder initially
     command: rm -rf /opt/SP/apps/tomcat/webapps/ROOT
-    
-  - name: Copy user_project Project War Files
-    copy: src=templates/userproject-0.0.1-SNAPSHOT dest=/opt/SP/apps/tomcat/webapps/ROOT.war mode=0644
 
+  - name: Copy Bikes Project War File
+    copy: src=templates/userproject-0.0.1-SNAPSHOT dest=/opt/SP/apps/tomcat/webapps/ROOT.war mode=0644
 
   handlers:
   - name: Restart Tomcat
