@@ -50,7 +50,6 @@ stage('Jfrog Artifacory Upload') {
   
  
 
-
 notify('Job Completed')   
 } catch (err) {
   notify("Error ${err}")
@@ -62,10 +61,11 @@ notify('Job Completed')
 
 def notify(status){
     emailext (
-	to: "abc",
+	to: "arnablens@gmail.com",
 	subject: "${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
 	 body: """<p>${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
 	<p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
 		)
 	}
+
 
