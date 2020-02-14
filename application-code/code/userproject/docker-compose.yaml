@@ -1,0 +1,8 @@
+version: '2'
+
+
+services:
+  userproject:
+    build: . 
+    ports:
+      - '30084:8080'
