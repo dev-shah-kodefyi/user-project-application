@@ -7,7 +7,7 @@ node {
    git 'https://github.com/devops311/DevMVC.git'
   }
     
- def project_path="01-Jenkins/Code/userproject"
+ def project_path="user-project-application/application-code/code/userproject"
  
  dir(project_path) {
     
