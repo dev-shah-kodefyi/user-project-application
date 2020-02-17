@@ -13,7 +13,7 @@
 body{
  background: url(https://motionarray.imgix.net/preview-54581lZpOLX9xfU_0013.jpg);  
  background-repeat: no-repeat;
- background-size:100%;
+ background-size:150%;
 }
 </style>
 </head>
@@ -23,11 +23,11 @@ body{
   <form action="AdminPage" method="post">
     <div class="form-group">
         <label for="UserId"><font color="white">User ID :</font></label>
-      <input type="text" class="form-control" id="senduserid" placeholder="Enter User ID" name="senduserid">
+      <input type="text" class="form-control" id="senduserid" placeholder="Please Enter User ID" name="senduserid">
     </div>
     <div class="form-group">
         <label for="pwd"><font color="white">Password :</font></label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+      <input type="password" class="form-control" id="pwd" placeholder="Please Enter password" name="pwd">
     </div>
     <div class="checkbox">
       <label><input type="checkbox" name="remember"><font color="white"> Remember me</font></label>
