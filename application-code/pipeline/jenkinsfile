@@ -47,6 +47,12 @@ stage('Jfrog Artifacory Upload') {
         server.upload(uploadSpec)
         
         }
+	
+	 stage ('Quality Assurence '){
+	input "Continue Deploying to QA server ?"
+	}
+ 
+
   
  
 }
