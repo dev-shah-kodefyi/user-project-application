@@ -30,18 +30,13 @@ node {
    sh label: '', script: 'docker-compose up -d --build'
   }
   
-
-  
   stage('Docker image push to dockerhub'){
-   
-   
-     docker.withRegistry( '', registryCredential ) {
+    docker.withRegistry( '', registryCredential ) {
          sh 'docker tag quality-assurence_userproject devops311/userproject'
         sh 'docker push devops311/userproject'
          
    }
   }
-  
-
-	}
+   }
+}
 
