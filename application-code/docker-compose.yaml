@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  web:
+    image: quality-assurence_userproject
+    build: . 
+    ports:
+      - '30084:8080'
+
