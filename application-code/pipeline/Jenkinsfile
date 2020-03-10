@@ -1,0 +1,43 @@
+
+de {
+ 
+  registry = "devops311/userproject"
+    registryCredential = 'dockerhubid'
+ 
+ stage('Git-Checkout') {
+   git 'https://github.com/devops311/qa-deployment.git'
+  }
+    
+ def project_path=""
+ 
+ dir(project_path) {
+   stage('Maven-Clean') {
+   sh label: '', script: 'mvn clean'
+  }
+    
+ stage('Maven-Compile') {
+   sh label: '', script: 'mvn compile'
+  }
+  
+   stage('Maven-Package') {
+   sh label: '', script: 'mvn package'
+  }
+  stage('Docker-Stage-Deployment') {
+   sh label: '', script: 'docker-compose up -d --build'
+  }
+  
+
+  
+  stage('Docker image push to dockerhub'){
+   
+   
+     docker.withRegistry( '', registryCredential ) {
+         sh 'docker tag quality-assurence_userproject devops311/userproject'
+        sh 'docker push devops311/userproject'
+         
+   }
+  }
+  
+
+	}
+
