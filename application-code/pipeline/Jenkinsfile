@@ -22,6 +22,9 @@ node {
    stage('Maven-Package') {
    sh label: '', script: 'mvn package'
   }
+	  stage('Maven-Install') {
+   sh label: '', script: 'mvn install'
+  }
  }
     def project_pathh="application-code"
 	 
