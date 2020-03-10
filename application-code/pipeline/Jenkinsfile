@@ -23,9 +23,9 @@ node {
    sh label: '', script: 'mvn package'
   }
  }
-    def project_path="application-code"
+    def project_pathh="application-code"
 	 
-   dir(project_path) {
+   dir(project_pathh) {
   stage('Docker-Stage-Deployment') {
    sh label: '', script: 'docker-compose up -d --build'
   }
