@@ -1,14 +1,14 @@
-
-de {
+node {
  
   registry = "devops311/userproject"
     registryCredential = 'dockerhubid'
+	
  
  stage('Git-Checkout') {
-   git 'https://github.com/devops311/qa-deployment.git'
+   git 'https://github.com/devops311/user-project-application.git'
   }
     
- def project_path=""
+ def project_path="application-code/code/userproject"
  
  dir(project_path) {
    stage('Maven-Clean') {
@@ -22,6 +22,10 @@ de {
    stage('Maven-Package') {
    sh label: '', script: 'mvn package'
   }
+ }
+    def project_path="application-code"
+	 
+   dir(project_path) {
   stage('Docker-Stage-Deployment') {
    sh label: '', script: 'docker-compose up -d --build'
   }
