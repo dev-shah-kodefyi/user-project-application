@@ -11,7 +11,9 @@ node {
  def project_path="application-code/code/userproject"
  
  dir(project_path) {
-   
+    stage('Maven-Clean') {
+   sh label: '', script: 'mvn clean'
+  }
     
  stage('Maven-Compile') {
    sh label: '', script: 'mvn compile'
