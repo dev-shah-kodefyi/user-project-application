@@ -25,6 +25,7 @@ node {
         }
  }  
  
+  /*
   stage("Defined Quality Gate"){
           timeout(time: 1, unit: 'HOURS') {
               def qg = waitForQualityGate()
@@ -33,7 +34,7 @@ node {
               }
           }
       }
- 
+ */
    stage('Maven-Test') {
    sh label: '', script: 'mvn test'
   }
@@ -42,7 +43,8 @@ node {
    sh label: '', script: 'mvn package'
   }
   
-   stage('Archive-Artifacts') {
+  /*
+  stage('Archive-Artifacts') {
    archiveArtifacts 'target/*.war'
   }
   
@@ -56,6 +58,7 @@ stage('Jfrog Artifacory Upload') {
         server.upload(uploadSpec)
         
         }
+	*/
 	
 	 stage ('Quality Assurence '){
 	input "Continue Deploying to QA server ?"
