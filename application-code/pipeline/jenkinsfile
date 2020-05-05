@@ -1,8 +1,5 @@
 node {
- try  {
- notify('Job Started') 
 
-     
   stage('Git-CheckOut') {
    git 'https://github.com/devops311/user-project-application.git'
   }
@@ -63,32 +60,8 @@ stage('Jfrog Artifacory Upload') {
  }
  stage('Docker Deployment'){
     
-        dir("/var/lib/jenkins/workspace/Job1/"){
+        dir("/var/lib/jenkins/workspace/userproject/application-code/Dockerfile/"){
         sh 'docker build -t userproject:$BUILD_NUMBER .'
         sh 'docker run -d -p 8080:8080 --name userproject$BUILD_NUMBER userprojectimage:$BUILD_NUMBER'
     }
     }
-
-
-  
- 
-}
-notify('Job Completed')   
-} catch (err) {
-  notify("Error ${err}")
-  currentBuild.result = 'FAILURE'
-}
-}
-
-
-
-def notify(status){
-    emailext (
-	to: "devashishkumar311@gmail.com",
-	subject: "${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-	 body: """<p>${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-	<p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
-		)
-	}
-
-
