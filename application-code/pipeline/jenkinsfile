@@ -30,22 +30,6 @@ stage('Sonar Analysis'){
    sh label: '', script: 'mvn install'
   }
   
-  */
-  stage('Archive-Artifacts') {
-   archiveArtifacts 'target/*.war'
-  }
-  
-stage('Jfrog Artifacory Upload') {
-        def server= Artifactory.server 'Artifactory'
-                    def uploadSpec= """{
-                        "files": [{
-                        "pattern": "target/*.war",
-                        "target": "userproject"}]
-                    }"""
-        server.upload(uploadSpec)
-        
-        }
-	*/
 	
  }
  stage('Docker Deployment'){
