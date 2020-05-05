@@ -60,10 +60,15 @@ stage('Jfrog Artifacory Upload') {
         }
 	*/
 	
-	 stage ('Quality Assurence '){
-	input "Continue Deploying to QA server ?"
-	}
- 
+ }
+ stage('Docker Deployment'){
+    
+        dir("/var/lib/jenkins/workspace/Job1/"){
+        sh 'docker build -t userproject:$BUILD_NUMBER .'
+        sh 'docker run -d -p 8080:8080 --name userproject$BUILD_NUMBER userprojectimage:$BUILD_NUMBER'
+    }
+    }
+
 
   
  
