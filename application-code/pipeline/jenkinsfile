@@ -31,16 +31,16 @@ stage('Sonar Analysis'){
               }
           }
       }
- */
+ 
    stage('Maven-Test') {
    sh label: '', script: 'mvn test'
   }
-  
+  */
    stage('Maven-Install') {
    sh label: '', script: 'mvn install'
   }
   
-  /*
+  */
   stage('Archive-Artifacts') {
    archiveArtifacts 'target/*.war'
   }
