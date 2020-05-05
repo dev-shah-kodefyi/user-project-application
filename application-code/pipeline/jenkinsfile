@@ -36,8 +36,8 @@ stage('Sonar Analysis'){
    sh label: '', script: 'mvn test'
   }
   
-   stage('Maven-Package') {
-   sh label: '', script: 'mvn package'
+   stage('Maven-Install') {
+   sh label: '', script: 'mvn install'
   }
   
   /*
