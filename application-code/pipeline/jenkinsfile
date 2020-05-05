@@ -65,3 +65,4 @@ stage('Jfrog Artifacory Upload') {
         sh 'docker run -d -p 8080:8080 --name userproject$BUILD_NUMBER userprojectimage:$BUILD_NUMBER'
     }
     }
+}
