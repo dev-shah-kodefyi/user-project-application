@@ -1,5 +1,5 @@
 FROM tomcat:9
-
+USER root
  
 RUN rm -rf /usr/local/tomcat/webapps/*
 
