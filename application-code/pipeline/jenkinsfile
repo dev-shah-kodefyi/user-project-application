@@ -16,13 +16,13 @@ node {
    sh label: '', script: 'mvn compile'
   }
   
- stage('Sonar Analysis'){
+/* stage('Sonar Analysis'){
         withSonarQubeEnv('SonarQube'){
          sh 'mvn sonar:sonar'
         }
  }  
  
-  /*
+  
   stage("Defined Quality Gate"){
           timeout(time: 1, unit: 'HOURS') {
               def qg = waitForQualityGate()
