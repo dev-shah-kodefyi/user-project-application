@@ -16,13 +16,13 @@ node {
    sh label: '', script: 'mvn compile'
   }
   
-/* stage('Sonar Analysis'){
+stage('Sonar Analysis'){
         withSonarQubeEnv('SonarQube'){
          sh 'mvn sonar:sonar'
         }
  }  
  
-  
+  /*
   stage("Defined Quality Gate"){
           timeout(time: 1, unit: 'HOURS') {
               def qg = waitForQualityGate()
@@ -60,7 +60,7 @@ stage('Jfrog Artifacory Upload') {
  }
  stage('Docker Deployment'){
     
-        dir("/var/lib/jenkins/workspace/userproject/application-code/"){
+        dir("/var/lib/jenkins/workspace/userproject/application-code/Dockerfile/"){
         sh 'docker build -t userproject:$BUILD_NUMBER .'
         sh 'docker run -d -p 8080:8080 --name userproject$BUILD_NUMBER userprojectimage:$BUILD_NUMBER'
     }
