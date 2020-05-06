@@ -3,6 +3,11 @@ node {
   stage('Git-CheckOut') {
    git 'https://github.com/devops311/user-project-application.git'
   }
+    stage('Trufflehog Inspection')
+    {
+    sh 'docker run gesellix/trufflehog --json https://github.com/devops311/user-project-application.git > trufflehogReport'
+    sh 'cat trufflehogReport'
+    }
     
  def project_path="application-code/code/userproject"
  
@@ -22,10 +27,5 @@ node {
   
 	
  
-    stage('Synk')
-    {
-   
-    snykSecurity snykInstallation: 'Snyk-1', snykTokenId: 'snyk-id'
-    }
   }
 }
