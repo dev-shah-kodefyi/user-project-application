@@ -32,12 +32,9 @@ stage('Sonar Analysis'){
   
 	
  
-    stage(Synk)
+    stage('Synk')
     {
     snykSecurity snykInstallation: 'Snyk-1', snykTokenId: 'snyk-id'
     }
-    
-    
-    
-    
+  }
 }
