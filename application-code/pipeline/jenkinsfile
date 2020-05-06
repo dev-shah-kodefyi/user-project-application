@@ -34,6 +34,7 @@ stage('Sonar Analysis'){
  
     stage('Synk')
     {
+    mvn dependency:tree -Dverbose -Dincludes=commons-collections
     snykSecurity snykInstallation: 'Snyk-1', snykTokenId: 'snyk-id'
     }
   }
