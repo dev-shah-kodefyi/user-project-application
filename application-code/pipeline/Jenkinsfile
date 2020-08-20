@@ -30,7 +30,10 @@ node {
 	 
    dir(project_pathh) {
   stage('Docker-Stage-Deployment') {
-   sh label: '', script: 'docker-compose up -d --build'
+   
+	  
+    docker build -t user_project-img .
+    docker run -d -p 8081:80  --name user_project_container user_project-img 
   }
   
   stage('Docker image push to dockerhub'){
