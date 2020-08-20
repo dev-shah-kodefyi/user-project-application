@@ -32,14 +32,14 @@ node {
   stage('Docker-Stage-Deployment') {
    
 	  
-   docker build -t user_project-img .
-    docker run -d -p 8081:8080  --name user_project_container user_project-img 
+    sh 'docker build -t user_project_img:$BUILD_NUMBER . '
+   sh ' docker run -d -p 8081:8080  --name user_project_container$BUILD_NUMBER user_project_img:$BUILD_NUMBER '
     
   }
   
   stage('Docker image push to dockerhub'){
     docker.withRegistry( '', registryCredential ) {
-         sh 'docker tag  user_project-img devops311/userproject'
+         sh 'docker tag  user_project_img devops311/userproject'
         sh 'docker push devops311/userproject'
          
    }
