@@ -38,9 +38,9 @@ node {
   }
   
   stage('Docker image push to dockerhub'){
-    docker.withRegistry( '', registryCredential ) {
-         sh 'docker tag  user_project_img:$BUILD_NUMBER  devops311/userproject:$BUILD_NUMBER'
-        sh 'docker push $registry:$BUILD_NUMBER'
+    docker.withRegistry( '', 'dockerhubid' ) {
+         sh label: '',script: 'docker push devops311/userproject:$BUILD_NUMBER'
+        
          
    }
   }
