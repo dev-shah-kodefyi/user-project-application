@@ -33,8 +33,8 @@ node {
    
 	  
    docker build -t user_project-img .
-    docker run -d -p 8081:80  --name user_project_container user_project-img 
-  }  
+    docker run -d -p 8081:8080  --name user_project_container user_project-img 
+    
   }
   
   stage('Docker image push to dockerhub'){
