@@ -77,10 +77,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
-				<plugin>
-					mvn dependency:tree -Dverbose -Dincludes=commons-collections
-					</plugin>
-			
+				
 			
 			
 			
