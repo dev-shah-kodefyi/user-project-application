@@ -37,13 +37,7 @@ node {
     
   }
   
-  stage('Docker image push to dockerhub'){
-    docker.withRegistry( '', 'dockerhubid' ) {
-         sh label: '',script: 'docker push devops311/userproject:$BUILD_NUMBER'
-        
-         
-   }
-  }
+  
    }
 }
 
