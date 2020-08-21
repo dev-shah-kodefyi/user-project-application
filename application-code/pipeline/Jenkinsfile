@@ -37,6 +37,19 @@ node {
     
   }
   
+	   stage('Docker image push to dockerhub'){
+   
+   
+     docker.withRegistry( '', registryCredential ) {
+         
+   sh 'docker tag  user_project_img devops311/useranchore'
+             
+        sh 'docker push devops311/useranchore'
+         
+   
+  }
+  
+	   
   
    }
 }
