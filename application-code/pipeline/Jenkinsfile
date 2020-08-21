@@ -1,6 +1,6 @@
 node {
  
-  registry = "devops311/userproject"
+  registry = "devops311/useranchore"
     registryCredential = 'dockerhubid'
 	
  
